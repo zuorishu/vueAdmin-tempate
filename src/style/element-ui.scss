@@ -1,0 +1,33 @@
+.el-container {
+    height: 100%;
+}
+
+//侧边栏
+.el-aside {
+    width: auto;
+    height: 100%;
+    background-color: #314155;
+    .el-menu {
+        border-right: 0;
+    }
+    .el-submenu {
+        .el-menu-item {
+            min-width: inherit;
+        }
+    }
+}
+
+//header
+.el-header {
+    height: 70px !important;
+    border-bottom: 1px solid #ccc;
+    background-color: #242f42;
+    .el-breadcrumb__inner {
+        color: #fff;
+    }
+    .el-breadcrumb__item:last-child {
+        .el-breadcrumb__inner {
+            color: #ccc;
+        }
+    }
+}

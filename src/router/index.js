@@ -17,32 +17,32 @@ export default new Router({
             component: r => require.ensure([], () => r(require('@/view/Home')), 'home'),
             children: [{
                 path: '/home',
-                name: '首页',
+                name: 'nav.home',
                 component: r => require.ensure([], () => r(require('@/view/dashboard')), 'home'),
             }, {
                 path: '/userAdmin/userList',
-                name: '用户列表',
-                meta: { blockName: '用户管理' },
+                name: 'nav.userAdmin',
+                meta: {},
                 component: r => require.ensure([], () => r(require('@/view/userAdmin/userList')), 'userAdmin')
             }, {
                 path: '/productAdmin/productList',
-                name: '产品管理',
-                meta: { blockName: '产品列表' },
+                name: 'nav.productAdmin',
+                meta: {},
                 component: r => require.ensure([], () => r(require('@/view/productAdmin/productList')), 'productAdmin')
             }, {
                 path: '/dictionary',
-                name: '字典表',
-                meta: { blockName: '字典表' },
+                name: 'nav.dictionary',
+                meta: {},
                 component: r => require.ensure([], () => r(require('@/view/dictionary/dictionary')), 'dictionary')
             }, {
                 path: '/ueditor',
-                name: '富文本',
-                meta: { blockName: '富文本' },
+                name: 'nav.ueditor',
+                meta: {},
                 component: r => require.ensure([], () => r(require('@/view/ueditor/ueditor')), 'ueditor')
             }, {
                 path: '/i18n',
-                name: 'i18n',
-                meta: { blockName: '国际化' },
+                name: 'nav.i18n',
+                meta: {},
                 component: r => require.ensure([], () => r(require('@/view/i18n/index')), 'i18n')
             }]
         }

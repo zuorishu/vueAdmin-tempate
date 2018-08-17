@@ -8,9 +8,8 @@
         </div>
         <div class="breadcrumb">
           <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item v-if="selfName != '首页' && selfName != ''">{{blockName}}</el-breadcrumb-item>
-            <el-breadcrumb-item v-if="selfName != '首页' && selfName != ''">{{selfName}}</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/home' }">{{$t('nav.home')}}</el-breadcrumb-item>
+            <el-breadcrumb-item v-if="blockName != '首页' && blockName != 'Home'">{{$t(blockName)}}</el-breadcrumb-item>
           </el-breadcrumb>
         </div>
       </div>
@@ -38,7 +37,6 @@ export default {
   data () {
     return {
       blockName:'',
-      selfName:'',
     }
   },
   created() {
@@ -46,19 +44,16 @@ export default {
     if(sessionStorage.getItem('breadcrumb') != null){
         let breadcrumb = sessionStorage.getItem('breadcrumb');
         that.blockName = JSON.parse(breadcrumb).blockName;
-        that.selfName = JSON.parse(breadcrumb).selfName;
     }
   },
   watch:{
     $route(to,form){
       let that = this;
-      that.blockName = to.meta.blockName;
-      that.selfName = to.name;
-      sessionStorage.setItem('breadcrumb',JSON.stringify({blockName:that.blockName,selfName:that.selfName}))
+      that.blockName = to.name;
+      sessionStorage.setItem('breadcrumb',JSON.stringify({blockName:that.blockName}))
     }
   },
   methods: {
-    
     // 点击退出
     handleCommand(){
         this.$router.replace({ path: '/login'})

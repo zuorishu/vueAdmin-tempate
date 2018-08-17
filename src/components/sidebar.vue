@@ -26,15 +26,8 @@ export default {
   data () {
     return {
         navData:[
-            {id:1,name:'代理管理',path:'',iconCls:'fa-calendar-o',children:[
-                {name:'会员列表',path:'/agentAdmin/vipList'},
-                {name:'代理商列表',path:'/agentAdmin/agentList'}
-            ]},
             {id:2,name:'用户管理',path:'',iconCls:'fa-user',children:[
                 {name:'用户列表',path:'/userAdmin/userList'}
-            ]},
-            {id:3,name:'提币审核',path:'',iconCls:'fa-database',children:[
-                {name:'提币审核',path:'/currencyReview'}
             ]},
             {id:4,name:'产品管理',path:'',iconCls:'fa-product-hunt',children:[
                 {name:'产品列表',path:'/productAdmin/productList'}
@@ -42,10 +35,10 @@ export default {
             {id:5,name:'字典表',path:'',iconCls:'fa-book',children:[
                 {name:'字典表',path:'/dictionary'}
             ]},
-            {id:6,name:'富文本',path:'',iconCls:'fa-book',children:[
+            {id:6,name:'富文本',path:'',iconCls:'fa-edit',children:[
                 {name:'富文本',path:'/ueditor'}
             ]},
-            {id:7,name:'i18n',path:'',iconCls:'fa-book',children:[
+            {id:7,name:'i18n',path:'',iconCls:'fa-language',children:[
                 {name:'i18n',path:'/i18n'}
             ]},
         ]
